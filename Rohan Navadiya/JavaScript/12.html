@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>ipl</h1>
+  <hr />
+  <table border="1" align="center" cellpadding="7" width="100%">
+    <thade>
+      <tr>
+        <th>Match Number</th>
+        <th>Date</th>
+        <th>Teams</th>
+        <th>Venue</th>
+      </tr>
+    </thade>
+    <tbody id="output">
+
+    </tbody>
+  </table>
+  <script>
+    var iplSchedule = [
+      {
+        "matchNumber": 1,
+        "date": "19-09-2020",
+        "teams": ["Mumbai Indians", "Chennai Super Kings"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 2,
+        "date": "20-09-2020",
+        "teams": ["Delhi Capitals", "Kings XI Punjab"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 3,
+        "date": "21-09-2020",
+        "teams": ["Sunrisers Hyderabad", "Royal Challengers Bangalore"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 4,
+        "date": "22-09-2020",
+        "teams": ["Rajasthan Royals", "Chennai Super Kings"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 5,
+        "date": "23-09-2020",
+        "teams": ["Kolkata Knight Riders", "Mumbai Indians"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 6,
+        "date": "24-09-2020",
+        "teams": ["Kings XI Punjab", "Royal Challengers Bangalore"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 7,
+        "date": "25-09-2020",
+        "teams": ["Chennai Super Kings", "Delhi Capitals"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 8,
+        "date": "26-09-2020",
+        "teams": ["Kolkata Knight Riders", "Sunrisers Hyderabad"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 9,
+        "date": "27-09-2020",
+        "teams": ["Rajasthan Royals", "Kings XI Punjab"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 10,
+        "date": "28-09-2020",
+        "teams": ["Royal Challengers Bangalore", "Mumbai Indians"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 11,
+        "date": "29-09-2020",
+        "teams": ["Delhi Capitals", "Sunrisers Hyderabad"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 12,
+        "date": "30-09-2020",
+        "teams": ["Rajasthan Royals", "Kolkata Knight Riders"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 13,
+        "date": "01-10-2020",
+        "teams": ["Kings XI Punjab", "Mumbai Indians"],
+        "venue": "Abu Dhabi Cricket Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 14,
+        "date": "02-10-2020",
+        "teams": ["Chennai Super Kings", "Sunrisers Hyderabad"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 15,
+        "date": "03-10-2020",
+        "teams": ["Royal Challengers Bangalore", "Rajasthan Royals"],
+        "venue": "Abu Dhabi Cricket Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 16,
+        "date": "04-10-2020",
+        "teams": ["Delhi Capitals", "Kolkata Knight Riders"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 17,
+        "date": "05-10-2020",
+        "teams": ["Mumbai Indians", "Sunrisers Hyderabad"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 18,
+        "date": "06-10-2020",
+        "teams": ["Kings XI Punjab", "Chennai Super Kings"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 19,
+        "date": "07-10-2020",
+        "teams": ["Kolkata Knight Riders", "Rajasthan Royals"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 20,
+        "date": "08-10-2020",
+        "teams": ["Sunrisers Hyderabad", "Kings XI Punjab"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 21,
+        "date": "09-10-2020",
+        "teams": ["Chennai Super Kings", "Royal Challengers Bangalore"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 22,
+        "date": "10-10-2020",
+        "teams": ["Mumbai Indians", "Delhi Capitals"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 23,
+        "date": "11-10-2020",
+        "teams": ["Rajasthan Royals", "Royal Challengers Bangalore"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 24,
+        "date": "12-10-2020",
+        "teams": ["Sunrisers Hyderabad", "Mumbai Indians"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 25,
+        "date": "13-10-2020",
+        "teams": ["Kings XI Punjab", "Kolkata Knight Riders"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 26,
+        "date": "14-10-2020",
+        "teams": ["Delhi Capitals", "Rajasthan Royals"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 27,
+        "date": "15-10-2020",
+        "teams": ["Royal Challengers Bangalore", "Kings XI Punjab"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 28,
+        "date": "16-10-2020",
+        "teams": ["Mumbai Indians", "Kolkata Knight Riders"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 29,
+        "date": "17-10-2020",
+        "teams": ["Rajasthan Royals", "Sunrisers Hyderabad"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 30,
+        "date": "18-10-2020",
+        "teams": ["Delhi Capitals", "Chennai Super Kings"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 31,
+        "date": "19-10-2020",
+        "teams": ["Royal Challengers Bangalore", "Kolkata Knight Riders"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 32,
+        "date": "20-10-2020",
+        "teams": ["Mumbai Indians", "Kings XI Punjab"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 33,
+        "date": "21-10-2020",
+        "teams": ["Kolkata Knight Riders", "Royal Challengers Bangalore"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 34,
+        "date": "22-10-2020",
+        "teams": ["Chennai Super Kings", "Mumbai Indians"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 35,
+        "date": "23-10-2020",
+        "teams": ["Kings XI Punjab", "Sunrisers Hyderabad"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 36,
+        "date": "24-10-2020",
+        "teams": ["Royal Challengers Bangalore", "Chennai Super Kings"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 37,
+        "date": "25-10-2020",
+        "teams": ["Rajasthan Royals", "Mumbai Indians"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 38,
+        "date": "26-10-2020",
+        "teams": ["Kolkata Knight Riders", "Delhi Capitals"],
+        "venue": "Abu Dhabi Cricket Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 39,
+        "date": "27-10-2020",
+        "teams": ["Sunrisers Hyderabad", "Delhi Capitals"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 40,
+        "date": "28-10-2020",
+        "teams": ["Mumbai Indians", "Royal Challengers Bangalore"],
+        "venue": "Abu Dhabi Cricket Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 41,
+        "date": "29-10-2020",
+        "teams": ["Chennai Super Kings", "Kolkata Knight Riders"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 42,
+        "date": "30-10-2020",
+        "teams": ["Kings XI Punjab", "Rajasthan Royals"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 43,
+        "date": "31-10-2020",
+        "teams": ["Delhi Capitals", "Mumbai Indians"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 44,
+        "date": "01-11-2020",
+        "teams": ["Royal Challengers Bangalore", "Sunrisers Hyderabad"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 45,
+        "date": "02-11-2020",
+        "teams": ["Chennai Super Kings", "Kings XI Punjab"],
+        "venue": "Sheikh Zayed Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 46,
+        "date": "03-11-2020",
+        "teams": ["Kolkata Knight Riders", "Rajasthan Royals"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      },
+      {
+        "matchNumber": 47,
+        "date": "04-11-2020",
+        "teams": ["Mumbai Indians", "Sunrisers Hyderabad"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 48,
+        "date": "05-11-2020",
+        "teams": ["Royal Challengers Bangalore", "Delhi Capitals"],
+        "venue": "Abu Dhabi Cricket Stadium, Abu Dhabi"
+      },
+      {
+        "matchNumber": 49,
+        "date": "06-11-2020",
+        "teams": ["Kings XI Punjab", "Kolkata Knight Riders"],
+        "venue": "Sharjah Cricket Stadium, Sharjah"
+      },
+      {
+        "matchNumber": 50,
+        "date": "07-11-2020",
+        "teams": ["Rajasthan Royals", "Chennai Super Kings"],
+        "venue": "Dubai International Cricket Stadium, Dubai"
+      }
+    ];
+
+    var output = document.getElementById('output');
+    iplSchedule.map(function (item) {
+      output.innerHTML += `<tr>
+                <td>${item.matchNumber}</td>
+                <td>${item.date}</td>
+                <td>${item.teams}</td>
+                <td>${item.venue}</td>
+                </tr>`;
+    })
+
+  </script>
+</body>
+
+</html>

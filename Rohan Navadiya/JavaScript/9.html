@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" width="100%">
+        <tr>
+            <td width="15%">
+                <form action="" method="post" onsubmit="return GenerateTable();">
+                    <table border="1" width="100%" cellpadding="10">
+                        <tr>
+                            <td align="center">
+                                <h4>Table</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input placeholder="start" type="number" name="strt" id="strt" required />
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <input placeholder="end" type="number" name="end" id="end"
+                                    required />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Generate Table" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+            <td width="85%" valign="top" id="mytable">
+
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        //user defined function 
+        function GenerateTable() {
+            var strt = parseInt(document.getElementById('strt').value);
+            var end = parseInt(document.getElementById('end').value);
+            var mytable = document.getElementById('mytable');
+            var content = ` <table border="1" width="100%">`;
+          
+                for (let i = strt; i <=end; i = i + 1) {
+                    content += `<td>`;
+                    for(let j=1;j<=10;j=j+1)    
+                    {
+                        let res = i*j;
+                        content += `${i} * ${j} = ${res}<br>`;
+                    }
+                    content += `</td>`;
+                }
+                content +=`</table>`;
+                mytable.innerHTML = content;
+            
+            return false; //required to prevent reloading page
+        }
+    </script>
+</body>
+
+</html>

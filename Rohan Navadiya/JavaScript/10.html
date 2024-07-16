@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 align="center">Simpal Interest & Compound Interest</h2><br>
+    <form action="" onsubmit="return simpal();">
+        <table border="1" width="25%" cellpadding="5" cellspacing="5" align="center">
+            <tr width="40%">
+                <td>
+                    <input placeholder="Enter Price" type="number" id="p" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input placeholder="Enter Rate of Int." type="number" id="r" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input placeholder="Enter Year" type="number" id="n" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input placeholder="Enter Time Period" type="number" id="t" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center><input type="Submit" value="Submit" /></center>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table border="1" width="25%" cellpadding="5" cellspacing="5" align="center">
+        <tr>
+            <td width="50%">Simpal Interest</td>
+            <td id="sim"></td>
+        </tr>
+        <tr>
+            <td>Compound Interest</td>
+            <td id="com"></td>
+        </tr>
+    </table>
+    <script>
+        function simpal() {
+            var MyMath = {
+                p: 0,
+                r: 0,
+                n: 0,
+                t: 0,
+                getSimpaleInt: function () {
+                    let res = this.p * this.r * this.n / 100;
+                    return res;
+                },
+                getCompoundInt: function () {
+                    let res = this.p * Math.pow(1 + (this.r / this.n), this.n * this.t);
+                    return res;
+                },
+            }
+            MyMath.p = parseInt(document.getElementById('p').value);
+            MyMath.r = parseInt(document.getElementById('r').value);
+            MyMath.n = parseInt(document.getElementById('n').value);
+            MyMath.t = parseInt(document.getElementById('t').value);
+
+            let sim = MyMath.getSimpaleInt();
+            let com = MyMath.getCompoundInt();
+
+            document.getElementById('sim').innerHTML = sim;
+            document.getElementById('com').innerHTML = com;
+            console.log(MyMath.p, MyMath.r, MyMath.n, MyMath.t);
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

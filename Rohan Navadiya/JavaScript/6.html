@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var hours = 0;
+        hours = prompt("Enter time in hos ",0);
+        hours = parseInt(hours);
+
+        if(hours>12 && hours<=24)
+        {
+            var time = hours -12;
+            document.write(""+time);
+            document.write(" : 00 PM");
+        }
+        else if(hours<=12)
+        {
+            document.write(""+hours);
+            document.write(" : 00 AM");
+        }
+    </script>
+</body>
+</html>

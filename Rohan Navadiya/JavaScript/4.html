@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pcost = 0;
+        var scost = 0;
+
+        pcost = prompt("Enter production cost ",0);
+        scost = prompt("Enter sales cost ",0);
+
+        pcost = parseInt(pcost);
+        scost = parseInt(scost);
+
+       if(pcost<scost)
+       {
+            var profit = scost - pcost ;
+            document.write("Profit is " + profit);
+             
+            var per = (100*profit/pcost);
+            document.write("<br>Profit in per is " + per);
+       }
+       else
+       {
+            var loss = scost - pcost;
+            document.write("Loss is " + loss);
+
+            var per = (100*loss/pcost);
+            document.write("<br>Loss in per " + per);
+       }
+    </script>
+</body>
+</html>

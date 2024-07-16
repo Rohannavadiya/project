@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var amount = 0;
+        var rate = 0;
+        var year = 0;
+
+        amount = prompt("Enter amount ",0);
+        rate = prompt("Enter rate ",0);
+        year = prompt("Enter year ",0);
+
+        amount = parseInt(amount);
+        rate = parseInt(rate);
+        year = parseInt(year);
+
+        var sim = amount*rate*year/100;
+
+        document.write("simple interest is " + sim);
+    </script>
+</body>
+</html>
